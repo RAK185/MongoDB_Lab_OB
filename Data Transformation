@@ -1,0 +1,11 @@
+db.students.aggregate([
+  {
+    $project: {
+      name: 1,
+      age: 1,
+      category: {
+        $cond: { if: {$gt: ["$age", 15]}, then: "Senior", else: "Junior" }
+      }
+    }
+  }
+])
