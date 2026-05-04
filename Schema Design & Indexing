@@ -1,0 +1,5 @@
+// Create index
+db.students.createIndex({name: 1})
+
+// Compound index
+db.students.createIndex({age: -1, grade: 1})
