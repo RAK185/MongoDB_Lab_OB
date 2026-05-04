@@ -1,0 +1,12 @@
+use appdb
+
+db.users.insertOne({name: "Rakesh", age: 21})
+
+db.users.find()
+
+db.users.updateOne(
+  {name: "Rakesh"},
+  {$set: {age: 22}}
+)
+
+db.users.deleteOne({name: "Rakesh"})
