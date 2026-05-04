@@ -1,0 +1,29 @@
+use company
+
+db.createCollection("staff")
+
+// CREATE
+db.staff.insertMany([
+  {name: "John", age: 30, dept: "IT"},
+  {name: "Alice", age: 25, dept: "HR"}
+])
+
+// READ
+db.staff.find()
+db.staff.find({dept: "IT"})
+db.staff.findOne({name: "John"})
+
+// UPDATE
+db.staff.updateOne(
+  {name: "John"},
+  {$set: {age: 31}}
+)
+
+db.staff.updateMany(
+  {dept: "HR"},
+  {$set: {dept: "Finance"}}
+)
+
+// DELETE
+db.staff.deleteOne({name: "Alice"})
+db.staff.deleteMany({dept: "Finance"})
