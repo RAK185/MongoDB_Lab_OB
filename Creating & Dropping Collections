@@ -1,0 +1,35 @@
+// Create database
+use employee
+
+// Create collection
+db.createCollection("employees")
+
+// Insert document
+db.employees.insertOne({
+  name: "nick",
+  age: 25,
+  desig: "HR",
+  salary: 30000
+})
+
+// Show collections
+show collections
+
+// Check collection exists
+db.getCollectionNames().includes("employees")
+
+// Drop collection
+db.employees.drop()
+
+// Verify
+show collections
+
+// Auto-create collection
+db.student.insertOne({
+  name: "Riley",
+  age: 17,
+  marks: 95
+})
+
+// Drop database
+db.dropDatabase()
